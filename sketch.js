@@ -2,12 +2,8 @@ var inc = 0.1;
 var scl = 10;
 var cols, rows;
 var partnum = 1500;
-
 var zoff = 0;
-var fr;
-
 var particles = [];
-
 var flowfield;
 
 function setup() {
@@ -16,8 +12,8 @@ function setup() {
 
   cols = floor(width / scl);
   rows = floor(height / scl);
-  fr = createP(' ');
-
+  
+  // Creating particles to start drawing
   flowfield = new Array(cols * rows);
   for (var i = 0; i < partnum; i++) {
     particles[i] = new Particle();
@@ -36,10 +32,9 @@ function draw() {
       v.setMag(0.5);
       flowfield[index] = v
       xoff += inc;
-
-
       stroke(0, 100);
       push();
+      
       translate(x * scl, y * scl);
       rotate(v.heading());
       //line(0, 0, scl, 0);
@@ -54,6 +49,4 @@ function draw() {
     particles[i].edges();
     particles[i].show();
   }
-
-  fr.html(floor(frameRate()));
 }

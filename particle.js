@@ -18,11 +18,13 @@ function Particle() {
   }
 
   this.show = function() {
+    // color of particles
     stroke(0, 5);
+    // stroke(200, 255, 255, 5);
+
     strokeWeight(1);
     line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y)
     this.updatePrev();
-      // point(this.pos.x, this.pos.y);
   }
 
   this.updatePrev = function() {

@@ -5,20 +5,32 @@ var partnum = 1500;
 var zoff = 0;
 var particles = [];
 var flowfield;
+var slider, rSlider, gSlider, bSlider;
 
 function setup() {
-  createCanvas(800, 500);
+  var canvas = createCanvas(800, 500);
   background(255);
 
   cols = floor(width / scl);
   rows = floor(height / scl);
-  
+  slider = createP(' ');
+
   // Creating particles to start drawing
   flowfield = new Array(cols * rows);
   for (var i = 0; i < partnum; i++) {
     particles[i] = new Particle();
 
   }
+  // // create sliders
+  // rSlider = createSlider(0, 255, 100);
+  // rSlider.position(20, 20);
+  // gSlider = createSlider(0, 255, 0);
+  // gSlider.position(20, 50);
+  // bSlider = createSlider(0, 255, 255);
+  // bSlider.position(20, 80);
+
+  canvas.parent('canvas');
+
 }
 
 function draw() {
@@ -34,10 +46,9 @@ function draw() {
       xoff += inc;
       stroke(0, 100);
       push();
-      
+
       translate(x * scl, y * scl);
       rotate(v.heading());
-      //line(0, 0, scl, 0);
       pop();
     }
     yoff += inc;
@@ -49,4 +60,7 @@ function draw() {
     particles[i].edges();
     particles[i].show();
   }
+  // var r = rSlider.value();
+  // var g = gSlider.value();
+  // var b = bSlider.value();
 }

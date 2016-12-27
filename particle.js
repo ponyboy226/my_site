@@ -21,7 +21,7 @@ function Particle() {
 
   this.show = function() {
     // color of particles
-    stroke(this.h, 255, 255, 5);
+    stroke(this.h, 255, 255, 25);
     this.h = this.h + 1;
     if (this.h > 255) {
       this.h = 0;

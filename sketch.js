@@ -8,9 +8,9 @@ var flowfield;
 var slider, rSlider, gSlider, bSlider;
 
 function setup() {
-  var canvas = createCanvas(800, 500);
+  var canvas = createCanvas(800, 800);
   background(255);
-
+  colorMode(HSB, 255);
   cols = floor(width / scl);
   rows = floor(height / scl);
   slider = createP(' ');

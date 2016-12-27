@@ -3,6 +3,8 @@ function Particle() {
   this.vel = createVector(0, 0);
   this.acc = createVector(0, 0);
   this.maxspeed = 2;
+  this.h = 0;
+
 
   this.prevPos = this.pos.copy();
 
@@ -19,7 +21,11 @@ function Particle() {
 
   this.show = function() {
     // color of particles
-    stroke(0, 5);
+    stroke(this.h, 255, 255, 5);
+    this.h = this.h + 1;
+    if (this.h > 255) {
+      this.h = 0;
+    }
     // stroke(200, 255, 255, 5);
 
     strokeWeight(1);

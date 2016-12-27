@@ -6,9 +6,9 @@ var zoff = 0;
 var particles = [];
 var flowfield;
 var slider, rSlider, gSlider, bSlider;
-
+   
 function setup() {
-  var canvas = createCanvas(800, 800);
+  var canvas = createCanvas(800, 500);
   background(255);
   colorMode(HSB, 255);
   cols = floor(width / scl);

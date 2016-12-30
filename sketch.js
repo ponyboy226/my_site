@@ -6,14 +6,16 @@ var zoff = 0;
 var particles = [];
 var flowfield;
 var slider, rSlider, gSlider, bSlider;
-   
+
+
 function setup() {
+  var button = createButton("Clear");
+
   var canvas = createCanvas(800, 500);
   background(255);
   colorMode(HSB, 255);
   cols = floor(width / scl);
   rows = floor(height / scl);
-  slider = createP(' ');
 
   // Creating particles to start drawing
   flowfield = new Array(cols * rows);
@@ -31,6 +33,13 @@ function setup() {
 
   canvas.parent('canvas');
 
+  button.parent('startOver');
+  button.mousePressed(resetBackground);
+
+}
+
+function resetBackground() {
+  background(255);
 }
 
 function draw() {

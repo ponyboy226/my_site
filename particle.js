@@ -6,6 +6,7 @@ function Particle() {
   this.h = 0;
 
 
+
   this.prevPos = this.pos.copy();
 
   this.update = function() {
@@ -25,7 +26,9 @@ function Particle() {
     this.h = this.h + 1;
     if (this.h > 255) {
       this.h = 0;
-    }
+    } 
+
+  
     // stroke(200, 255, 255, 5);
 
     strokeWeight(1);
